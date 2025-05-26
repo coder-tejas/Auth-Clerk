@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSignUp } from "@clerk/clerk-react";
 import { SignUpSchema, type SignUpFormData } from "../lib/schema";
+import { Link } from "react-router-dom";
 
 type OAuthStrategy = "oauth_google" | "oauth_apple" | "oauth_facebook";
 
@@ -148,8 +149,8 @@ const Signup = (): JSX.Element => {
 
         <p className="text-center mt-4 text-sm text-gray-500">
           Already have an account?{" "}
-          <a href="/signin" className="text-blue-600 hover:underline">
-            Sign in
+          <a href="/login" className="text-blue-600 hover:underline">
+            <Link to={"/api/auth/login"}>Login</Link>
           </a>
         </p>
       </div>

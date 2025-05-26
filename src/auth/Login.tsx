@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginFormData } from "../lib/schema";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 type OAuthStrategy = "oauth_google" | "oauth_apple" | "oauth_facebook";
 
@@ -145,9 +146,12 @@ export default function LoginForm() {
 
       <p className="text-center text-sm mt-4">
         Don&apos;t have an account?{" "}
-        <a href="/signup" className="text-[#2563eb] hover:underline">
-          Sign up
-        </a>
+        
+          <Link to="/api/auth/signup" >Sign up</Link>
+        
+
+          
+      
       </p>
     </div>
   );
